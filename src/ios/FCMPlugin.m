@@ -191,4 +191,15 @@ static FCMPlugin *fcmPluginInstance;
     appInForeground = YES;
 }
 
+- (void)setBadgeNumber:(CDVInvokedUrlCommand *)command {
+    int number    = [[command.arguments objectAtIndex:0] intValue];
+    
+    [self.commandDelegate runInBackground:^{
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:number];
+        
+        CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
+}
+
 @end
