@@ -21,5 +21,6 @@
 - (void)notifyOfMessage:(NSData*) payload;
 - (void)appEnterBackground;
 - (void)appEnterForeground;
+- (void)setBadgeNumber:(CDVInvokedUrlCommand *)command;
 
 @end
