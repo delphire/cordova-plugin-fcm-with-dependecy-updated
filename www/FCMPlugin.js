@@ -19,6 +19,16 @@ FCMPlugin.prototype.subscribeToTopic = function(topic, success, error) {
   exec(success, error, "FCMPlugin", "subscribeToTopic", [topic]);
 };
 
+// SET BADGE NUMBER //
+FCMPlugin.prototype.setBadgeNumber = function(number, success, error) {
+  exec(success, error, "FCMPlugin", "setBadgeNumber", [number]);
+};
+
+// GET BADGE NUMBER //
+FCMPlugin.prototype.getBadgeNumber = function(success, error) {
+  exec(success, error, "FCMPlugin", "getBadgeNumber", []);
+};
+
 // UNSUBSCRIBE FROM TOPIC //
 FCMPlugin.prototype.unsubscribeFromTopic = function(topic, success, error) {
   exec(success, error, "FCMPlugin", "unsubscribeFromTopic", [topic]);
